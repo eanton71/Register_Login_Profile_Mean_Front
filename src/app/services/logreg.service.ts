@@ -66,7 +66,7 @@ export class LogregService {
 
       if(response.ok){
 
-          console.log(response.body);
+           
 
           this.updateImageLocalStorage(response.body!);
 
@@ -123,9 +123,9 @@ export class LogregService {
   }
 
   private updateImageLocalStorage(user:User):void{
-
+//console.log(user)
     let usr = JSON.parse(localStorage.getItem('user')!);
-    user.user_image = usr.user_image;
+    usr.user_image = user.user_image;
     localStorage.setItem('user',JSON.stringify(user));
     this.currentUserSubject.next(user);
   }

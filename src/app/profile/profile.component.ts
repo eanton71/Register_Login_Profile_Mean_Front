@@ -46,10 +46,10 @@ export class ProfileComponent {
     if(file !== undefined && allowed.includes(file.type)){
 
       this.logreg.updateUserImage(this.logreg.userId,file).subscribe(result=>{
-
-        if(result){
-          this.getUserInfo();
-
+         
+        if (result) {
+          this.path = '/assets/image/' + this.logreg.userId + '/' + file.name;
+            
         }
       })
     }
